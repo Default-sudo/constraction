@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexBuild | Modern Construction & Engineering</title>
+    <link rel="stylesheet" href="const.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Apex<span>Build</span></div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Our Work</a></li>
+            <li><a href="#calculator">Estimator</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>Building Tomorrow's <br><span class="highlight">Infrastructure Today</span></h1>
+            <p>Precision engineering, sustainable construction materials, and elite project management for commercial and residential developments.</p>
+            <a href="#calculator" class="btn-primary">Estimate Your Project</a>
+        </div>
+    </header>
+
+    <!-- Core Services Section -->
+    <section id="services" class="section">
+        <h2 class="section-title">Our Core Capabilities</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="icon">🏗️</div>
+                <h3>Commercial Contracting</h3>
+                <p>High-rise framing, corporate offices, and industrial complexes built safely to strict modern code requirements.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🏡</div>
+                <h3>Residential Development</h3>
+                <p>Custom luxury homes and multi-family residential estates engineered with eco-friendly sustainable designs.</p>
+            </div>
+            <div class="card">
+                <div class="icon">📐</div>
+                <h3>Civil Engineering</h3>
+                <p>Comprehensive structural assessments, blueprints, site preparation, and foundation engineering workflows.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio (Interactive Filter) -->
+    <section id="portfolio" class="section light-bg">
+        <h2 class="section-title">Featured Projects</h2>
+        
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterProjects('all')">Show All</button>
+            <button class="filter-btn" onclick="filterProjects('commercial')">Commercial</button>
+            <button class="filter-btn" onclick="filterProjects('residential')">Residential</button>
+        </div>
+
+        <div class="grid margin-top" id="portfolio-grid">
+            <div class="project-card commercial">
+                <div class="project-img text-placeholder">🏢 Commercial Complex</div>
+                <div class="project-info">
+                    <h4>Vanguard Office Tower</h4>
+                    <p>Steel frame structure, LEED-certified energy rating.</p>
+                </div>
+            </div>
+
+            <div class="project-card residential">
+                <div class="project-img text-placeholder">🍏 Modern Residence</div>
+                <div class="project-info">
+                    <h4>The Obsidian Villa</h4>
+                    <p>Custom glass and architectural concrete estate.</p>
+                </div>
+            </div>
+
+            <div class="project-card commercial">
+                <div class="project-img text-placeholder">🏬 Logistics Hub</div>
+                <div class="project-info">
+                    <h4>Nexus Distribution Center</h4>
+                    <p>Pre-cast concrete warehouse panel optimization.</p>
+                </div>
+            </div>
+
+            <div class="project-card residential">
+                <div class="project-img text-placeholder">🏘️ Eco-Townhomes</div>
+                <div class="project-info">
+                    <h4>Greenway Eco-Quarters</h4>
+                    <p>Multi-family sustainable timber framework homes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Cost Estimator Widget -->
+    <section id="calculator" class="section">
+        <h2 class="section-title">Instant Project Cost Estimator</h2>
+        <div class="calculator-container">
+            <p class="calc-desc">Input your basic project criteria below to generate a baseline structural engineering estimation.</p>
+            
+            <div class="form-group">
+                <label for="project-type">Select Construction Type:</label>
+                <select id="project-type" onchange="calculateEstimate()">
+                    <option value="residential">Residential ($150 / sq ft)</option>
+                    <option value="commercial">Commercial ($280 / sq ft)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="square-footage">Total Target Square Footage (sq ft):</label>
+                <input type="number" id="square-footage" value="2000" min="100" oninput="calculateEstimate()">
+            </div>
+
+            <div class="form-group check-group">
+                <input type="checkbox" id="premium-materials" onchange="calculateEstimate()">
+                <label for="premium-materials">Utilize Premium / Eco-Sustainable Materials (+20%)</label>
+            </div>
+
+            <div class="calculator-result">
+                <h3>Estimated Structural Budget</h3>
+                <div class="price-display" id="calculated-price">$300,000</div>
+                <small>*Excludes site-specific grading, local zoning fees, and customized interior finishes.</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 ApexBuild Contractors Group. Licensed, Bonded, and Insured.</p>
+    </footer>
+
+    <script src="const.js"></script>
+</body>
+</html>
